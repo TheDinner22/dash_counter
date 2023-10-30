@@ -13,39 +13,39 @@ def is_white(rgb_tuple):
     return False
 
 
-with tempfile.TemporaryDirectory() as path:
-    Ys = []
-    Xs = []
-    paths = [
-        "lectures/inclass1.pdf", 
-        "lectures/inclass2.pdf", 
-        "lectures/inclass3.pdf", 
-        "lectures/inclass4.pdf", 
-        "lectures/inclass5.pdf", 
-        "lectures/inclass6.pdf", 
-        "lectures/inclass7.pdf", 
-        "lectures/inclass8.pdf", 
-        "lectures/inclass9.pdf", 
-        "lectures/inclass10.pdf", 
-        "lectures/inclass11.pdf", 
-        "lectures/inclass12.pdf", 
-        "lectures/inclass13.pdf", 
-        "lectures/inclass14.pdf", 
-        "lectures/inclass15.pdf", 
-        "lectures/inclass16.pdf", 
-        "lectures/inclass17.pdf", 
-        "lectures/inclass18.pdf", 
-        "lectures/inclass19.pdf", 
-        "lectures/inclass20.pdf", 
-        "lectures/inclass21.pdf", 
-        "lectures/inclass22.pdf", 
-        "lectures/inclass23.pdf", 
-        "lectures/inclass24.pdf", 
-        "lectures/inclass25.pdf", 
-        "lectures/reviewsession1.pdf", 
-        "lectures/reviewsession2.pdf", 
-    ]
-    for path in paths:
+Ys = []
+Xs = []
+paths = [
+    "lectures/inclass1.pdf", 
+    "lectures/inclass2.pdf", 
+    "lectures/inclass3.pdf", 
+    "lectures/inclass4.pdf", 
+    "lectures/inclass5.pdf", 
+    "lectures/inclass6.pdf", 
+    "lectures/inclass7.pdf", 
+    "lectures/inclass8.pdf", 
+    "lectures/inclass9.pdf", 
+    "lectures/inclass10.pdf", 
+    "lectures/inclass11.pdf", 
+    "lectures/inclass12.pdf", 
+    "lectures/inclass13.pdf", 
+    "lectures/inclass14.pdf", 
+    "lectures/inclass15.pdf", 
+    "lectures/inclass16.pdf", 
+    "lectures/inclass17.pdf", 
+    "lectures/inclass18.pdf", 
+    "lectures/inclass19.pdf", 
+    "lectures/inclass20.pdf", 
+    "lectures/inclass21.pdf", 
+    "lectures/inclass22.pdf", 
+    "lectures/inclass23.pdf", 
+    "lectures/inclass24.pdf", 
+    "lectures/inclass25.pdf", 
+    "lectures/reviewsession1.pdf", 
+    "lectures/reviewsession2.pdf", 
+]
+for path in paths:
+    with tempfile.TemporaryDirectory() as path:
         images = convert_from_path(path, output_folder=path)
 
         # total height (Y)
@@ -74,3 +74,4 @@ with tempfile.TemporaryDirectory() as path:
         Xs.append(squiggles_pixel_count)
     print(Ys)
     print(Xs)
+    print()
