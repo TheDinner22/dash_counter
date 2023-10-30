@@ -81,5 +81,12 @@ for filepath in paths:
                     squiggles_pixel_count += 1
         Xs.append(squiggles_pixel_count)
     print(Ys)
+    print(Y1s)
     print(Xs)
     print("")
+
+print("DONE")
+print("")
+print(Ys)
+print(Y1s)
+print(Xs)
