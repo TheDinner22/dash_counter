@@ -14,6 +14,7 @@ def is_white(rgb_tuple):
 
 
 Ys = []
+Y1s = []
 Xs = []
 paths = [
     "lectures/inclass1.pdf", 
@@ -44,9 +45,9 @@ paths = [
     "lectures/reviewsession1.pdf", 
     "lectures/reviewsession2.pdf", 
 ]
-for path in paths:
+for filepath in paths:
     with tempfile.TemporaryDirectory() as path:
-        images = convert_from_path(path, output_folder=path)
+        images = convert_from_path(filepath, output_folder=path)
 
         # total height (Y)
         pdf_height = 0
@@ -54,6 +55,13 @@ for path in paths:
             pdf_height += image.height
         print(f"pdf_height: {pdf_height}")
         Ys.append(pdf_height)
+
+        # total number of pixels (could also be Y)
+        pdf_area = 0
+        for image in images:
+            pdf_area += image.height * image.width
+        print(f"pdf_area: {pdf_area}")
+        Y1s.append(pdf_area)
 
         # number of squigles (X) (became number of pixels)
         squiggles_pixel_count = 0
@@ -74,4 +82,4 @@ for path in paths:
         Xs.append(squiggles_pixel_count)
     print(Ys)
     print(Xs)
-    print()
+    print("")
